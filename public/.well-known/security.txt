@@ -1,0 +1,8 @@
+Contact: mailto:security@triospheretech.com
+Contact: mailto:info@triospheretech.com
+Encryption: https://www.triospheretech.com/pgp-key.txt
+Acknowledgments: https://www.triospheretech.com/security-acknowledgments
+Preferred-Languages: en
+Canonical: https://www.triospheretech.com/.well-known/security.txt
+Policy: https://www.triospheretech.com/security-policy
+Expires: 2026-12-31T23:59:00z

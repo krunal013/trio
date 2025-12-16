@@ -1,0 +1,21 @@
+/* TEAM */
+Developer: Triosphere Tech
+Location: Ahmedabad, Gujarat, India
+Website: https://www.triospheretech.com
+Instagram: https://www.instagram.com/triospheretech/
+LinkedIn: https://www.linkedin.com/company/triospheretech/
+
+/* COMPANY */
+Name: Triosphere Tech
+Services: Web Development, App Development, Cloud Solutions, UI/UX Design, Automation, DevOps, Digital Transformation
+Address: Ahmedabad, Gujarat, India
+Email: info@triospheretech.com
+Phone: +91 83206 33166
+
+/* SITE */
+Built With: Next.js / React / Tailwind CSS
+Hosting: Vercel (or whichever you use)
+Last Updated: 2025
+
+/* THANK YOU */
+We build technology that empowers businesses.
