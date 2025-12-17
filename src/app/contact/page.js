@@ -8,6 +8,10 @@ import Link from "next/link";
 import FAQ from "@/components/DigitalSolutions/Common/Faq";
 import { ContactUs } from "@/Data/FaqData";
 import Container from "@/components/ui/Container";
+import ContactForm from "@/components/contact/ContactForm";
+
+
+
 
 const Page = () => {
   return (
@@ -104,15 +108,7 @@ const Page = () => {
                   Tell us more about yourself and what you're looking to build.
                 </p>
 
-                <form className="mt-10 space-y-8">
-                  <Input label="Your name"  />
-                  <Input label="Email" />
-                  <Textarea label="Tell us about the project" />
-
-                  <button className="w-full bg-black text-white py-4 rounded-xl font-medium">
-                    Let’s get started!
-                  </button>
-                </form>
+               <ContactForm />
               </div>
             </div>
           </div>

@@ -96,12 +96,16 @@ const Navbar = () => {
               {/* Logo + Mobile Hamburger */}
             <div className="flex justify-between items-center lg:flex-row">
               <Link href="/">
-                <Image
-                  src={pathname === "/" && isHomeTop ? Logo : Logo}
-                  alt="Triosphere Logo"
-                  className="h-10 md:h-12  w-auto transition-all duration-300"
-                />
-              </Link>
+  <Image
+    src={Logo}
+    alt="Triosphere Logo"
+    width={240}
+    height={80}
+    priority
+    className="h-10 md:h-12 w-auto transition-all duration-300"
+  />
+</Link>
+
 
               <button
                 className={`lg:hidden text-2xl focus:outline-none transition-all duration-300 ${pathname === "/" && isHomeTop ? "text-black" : "text-black"
@@ -145,7 +149,7 @@ const Navbar = () => {
               </ul>
  <Link href="/contact">
               <button
-                className={`ml-4 whitespace-nowrap animated-button transition-all duration-300 ${pathname === "/" && isHomeTop ? "text-black border-black" : "text-black"
+                className={`pl-4 whitespace-nowrap animated-button transition-all duration-300 ${pathname === "/" && isHomeTop ? "text-black border-black" : "text-black"
                   }`}
               >
                 <span>

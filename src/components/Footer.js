@@ -561,13 +561,13 @@ const Footer = () => {
 
 
             <div className="flex mb-5 lg:mb-0 mt-5 lg:mt-0 space-x-4 text-black">
-              <a href="https://www.instagram.com/triospheretech/" target="_blank">
+              <a href="https://www.instagram.com/triospheretech/" aria-label="triosphere tech instagram" target="_blank">
                 <RiInstagramLine className="text-2xl hover:text-pink-600" />
               </a>
-              <a href="https://wa.me/918320333166" target="_blank">
+              <a href="https://wa.me/918320333166" aria-label="triosphere tech whatsapp" target="_blank">
                 <FaWhatsapp className="text-2xl hover:text-green-600" />
               </a>
-              <a href="https://www.linkedin.com/company/triospheretech/" target="_blank">
+              <a href="https://www.linkedin.com/company/triospheretech/" aria-label="triosphere tech linkedin" target="_blank">
                 <FaLinkedin className="text-2xl hover:text-blue-600" />
               </a>
             </div>

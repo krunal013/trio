@@ -25,12 +25,12 @@ of Digital Experience
 
         {/* Buttons */}
         <div className=" flex flex-row  md:flex-row items-center justify-center gap-4 mt-12">
-            <Link href="/contact">
+            <Link href="/contact" aria-label="Triosphere tech contact page">
                 <button className=" px-6 py-3  md:mb-0 cursor-pointer shadow-lg  bg-gradient-to-br from-[#09d6c8] via-[#7190fa] to-[#bf64f9] text-white rounded-full text-sm font-bold tracking-wide  transition-all duration-300 active:scale-105">
                     Build With Us
                 </button>
             </Link>
-            <Link href="/casestudies">
+            <Link href="/casestudies" aria-label="Triosphere tech case studies">
                 <button className="px-6 py-3 flex items-center justify-between gap-1 border font-semibold shadow-md border-black rounded-full text-sm tracking-wide text-black cursor-pointer transition-all duration-300 active:scale-105">
                     View our work <IoIosArrowForward className="inline-block text-md"/>
                 </button>
