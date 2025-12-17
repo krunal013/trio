@@ -264,7 +264,7 @@ const Footer = () => {
 
 
                   <h4 className="text-lg text-zinc-900 font-semibold uppercase mb-3">
-                    Industries we serve
+                    Industries
                   </h4>
                   <ul className="text-sm">
                     <li className="mb-2.5">
@@ -309,7 +309,7 @@ const Footer = () => {
                     </li>
                     <li className="mb-2.5">
                       <Link
-                        href="/digitalsolutions/FoodsandBeverage"
+                        href="/digitalsolutions/FoodandBeverage "
                         className="text-zinc-800 font-medium hover:text-zinc-900"
                       >
                         Food & Beverage
@@ -410,17 +410,17 @@ const Footer = () => {
             <div>{/* 5️⃣ Join Us */}
               <div className="text-left">
                 <span className="text-2xl font-bold">Head Office</span>
-                <div className="h-[3px] bg-gradient-to-br from-[#09d6c8] via-[#7190fa] to-[#bf64f9] w-10"></div>
+                <div className="h-[3px] bg-gradient-to-br rounded-full from-[#09d6c8] via-[#7190fa] to-[#bf64f9] w-10"></div>
 
-                <p className="py-2 text-md text-zinc-500 lg:max-w-xs">
-                  1205, Phoenix, Vijay Cross Road, to, Commerce Six Rd, Navrangpura,
-                  Ahmedabad, Gujarat 380009
+                <p className="py-2 text-md text-zinc-700 lg:max-w-xs">
+                  1205, Phoenix, Vijay Cross Road to Commerce Six Road, Navrangpura,
+                  Ahmedabad, Gujarat - 380009
                 </p>
 
                 <span className="font-bold text-2xl mt-3">Contact info</span>
-                <div className="h-[3px] bg-gradient-to-br from-[#09d6c8] via-[#7190fa] to-[#bf64f9] w-10"></div>
+                <div className="h-[3px] bg-gradient-to-br rounded-full from-[#09d6c8] via-[#7190fa] to-[#bf64f9] w-10"></div>
 
-                <p className="pt-2 text-md text-zinc-500 lg:max-w-xs">
+                <p className="pt-2 text-md text-zinc-700 lg:max-w-xs">
                   <span className="font-semibold">Email:</span>{" "}
                   <a
                     href="mailto:info@triospheretech.com"
@@ -430,7 +430,7 @@ const Footer = () => {
                   </a>
                 </p>
 
-                <p className="text-md text-zinc-500 lg:max-w-xs">
+                <p className="text-md text-zinc-700 lg:max-w-xs">
                   <span className="font-semibold">Mobile:</span>{" "}
                   <a
                     href="tel:+918320333166"
@@ -440,8 +440,8 @@ const Footer = () => {
                   </a>
                 </p>
                 <h4 className="text-2xl mt-5 text-zinc-900 font-bold ">Join Us</h4>
-                <div className="h-[3px] bg-gradient-to-br from-[#09d6c8] via-[#7190fa] to-[#bf64f9] w-10 mb-2"></div>
-                <p className="text-md text-zinc-500 leading-6 mb-3 font-semibold">
+                <div className="h-[3px] bg-gradient-to-br rounded-full from-[#09d6c8] via-[#7190fa] to-[#bf64f9] w-10 mb-2"></div>
+                <p className="text-md text-zinc-700 leading-6 mb-3 font-nomrmal">
                   Connect with our team for your technology queries.
                 </p>
                 <Button href="/contact" text="Connect" />
@@ -482,7 +482,7 @@ const Footer = () => {
                 <li><Link href="/digitalsolutions/Education">Education</Link></li>
                 <li><Link href="/digitalsolutions/Retail">Retail</Link></li>
                 <li><Link href="/digitalsolutions/RealEstate">Real Estate</Link></li>
-                <li><Link href="/digitalsolutions/FoodsandBeverage">Foods & Beverage</Link></li>
+                <li><Link href="/digitalsolutions/FoodandBeverage">Foods & Beverage</Link></li>
               </ul>
             </AccordionSection>
 

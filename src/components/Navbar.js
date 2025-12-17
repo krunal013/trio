@@ -84,7 +84,7 @@ const Navbar = () => {
       <nav
         className={`px-0 py-4 fixed top-0 w-full z-50 transition-all duration-300 
         ${pathname === "/" && isHomeTop
-            ? "bg-transparent backdrop-blur-xl border-b border-white/10"
+            ? "bg-transparent backdrop-blur-sm border-b border-white/0"
             : "bg-white/50 backdrop-blur-md"
           }`}
       >
@@ -143,16 +143,16 @@ const Navbar = () => {
                 ))}
 
               </ul>
-
+ <Link href="/contact">
               <button
                 className={`ml-4 whitespace-nowrap animated-button transition-all duration-300 ${pathname === "/" && isHomeTop ? "text-black border-black" : "text-black"
                   }`}
               >
                 <span>
-                  <Link href="/contact">Contact Us</Link>
+                 Contact Us
                 </span>
                 <span></span>
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>

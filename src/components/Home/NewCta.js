@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import LogoInHand from "../../../public/images/Home/LogoInHand1.webp";
+import Link from "next/link";
 
 const NewCta = () => {
   return (
@@ -56,14 +57,17 @@ const NewCta = () => {
         </p>
 
         <div className="flex items-center justify-center gap-4 mt-7">
-          <button className="px-6 py-3 rounded-full shadow-md hover:opacity-90 transition 
+          <Link href="/contact" className="inline-block">
+          <button className="px-6 py-3 rounded-full shadow-md hover:opacity-90 transition-all active:scale-95 cursor-pointer font-semibold
             text-white bg-gradient-to-r from-[#09d6c8] via-[#7190fa] to-[#bf64f9]">
             ✦ Connect With Us
           </button>
-
-          <button className="px-6 py-3 bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition">
+          </Link>
+           <Link href="/about" className="inline-block">
+          <button className="px-6 py-3 bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition-all active:scale-95 cursor-pointer ">
             Learn More
           </button>
+          </Link>
         </div>
       </div>
     </section>

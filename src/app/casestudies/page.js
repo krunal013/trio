@@ -64,7 +64,7 @@ const Page = () => {
         ]}
         title="Explore Our Success Stories: Transformative Case Studies Across Industries"
         description="See how we help global brands innovate and grow."
-        buttonText="Contact Us"
+        buttonText="Let’s Talk"
         buttonLink="/contact"
       />
 

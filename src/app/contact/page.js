@@ -18,10 +18,10 @@ const Page = () => {
           { name: "Home", href: "/" },
           { name: "Contact Us", href: "/contact" },
         ]}
-        title="Contact Us to Develop Your Next Breakthrough Solution"
-        description="Collaborate with our team that understands innovation and turn your business ideas into real ROI."
-        buttonText="Contact Us"
-        buttonLink="/contact"
+        title="Build Your Next Breakthrough Solution"
+        description="Collaborate with a team that turns innovative ideas into real business ROI."
+        buttonText="Discover Our Work"
+        buttonLink="/casestudies"
       />
 
       {/* CONTACT CONTENT */}
@@ -34,7 +34,7 @@ const Page = () => {
 
               {/* Intro */}
               <div>
-                <h2 className="mb-10 text-3xl md:text-5xl font-semibold">
+                <h2 className="mb-5 text-3xl md:text-5xl font-semibold">
                   Contact Us
                 </h2>
 
@@ -47,8 +47,7 @@ const Page = () => {
                     </h4>
                     <p className="text-zinc-600 leading-relaxed">
                       Every conversation starts with understanding your goals.
-                      Whether it’s a new idea or scaling an existing product, our team
-                      guides you with clarity and technical depth.
+
                     </p>
                   </div>
 
@@ -67,8 +66,8 @@ const Page = () => {
                     subtitle="Come say hello at our office."
                     value={
                       <>
-                        1205, Phoenix,<br />
-                        Commerce Six Road<br />
+                        1205, Phoenix, Vijay Cross Road to<br />
+                        Commerce Six Road,<br />
                         Ahmedabad, Gujarat – 380009
                       </>
                     }
@@ -78,8 +77,8 @@ const Page = () => {
                   <InfoRow
                     icon={<MdCall />}
                     title="Call us"
-                    subtitle="Mon–Fri from 10 AM to 7 PM."
-                    value="+91 83203 33166"
+                    subtitle="Mon – Fri from 10 AM to 7 PM."
+                    value="+91 83203 - 33166"
                   />
                 </div>
               </div>
@@ -150,7 +149,7 @@ const SocialLink = ({ href, icon }) => (
 
 const Input = ({ label, placeholder }) => (
   <div>
-    <label className="block text-sm text-zinc-700 mb-1">{label}</label>
+    <label className="block text-md font-semibold text-zinc-700 mb-1">{label}</label>
     <input
       className="w-full bg-transparent border-b border-zinc-400 py-2 focus:outline-none"
       placeholder={placeholder}
@@ -160,7 +159,7 @@ const Input = ({ label, placeholder }) => (
 
 const Textarea = ({ label }) => (
   <div>
-    <label className="block text-sm text-zinc-700 mb-1">{label}</label>
+    <label className="block text-md font-semibold text-zinc-700 mb-1">{label}</label>
     <textarea
       rows={3}
       className="w-full bg-transparent border-b border-zinc-400 py-2 resize-none focus:outline-none"

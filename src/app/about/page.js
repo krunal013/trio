@@ -72,7 +72,7 @@ const page = () => {
       ]}
       title="With every line of code, we create experiences so seamless, you’ll forget it’s technology powering it all."
        description="Get a glimpse inside Triosphere and understand our vision."
-      buttonText="Contact Us"
+      buttonText="Let’s Talk"
       buttonLink="/contact"
       className='mt-24 md:mt-28'
     />  

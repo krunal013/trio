@@ -49,7 +49,7 @@ const job = await fetchJob(slug);
   }
 
   return (
-    <Container>
+    <Container className="pb-16">
     <section
       className=""
     >

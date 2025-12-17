@@ -50,7 +50,7 @@ const Breadcrumb = ({
           {/* CTA Button */}
           {buttonText && (
             <Link href={buttonLink || "#"} className="inline-block">
-              <button className="mt-6 sm:mt-8 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm sm:text-base font-semibold text-white transition hover:bg-zinc-800">
+              <button className="mt-6 sm:mt-8 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm sm:text-base font-semibold text-white hover:bg-zinc-800 cursor-pointer active:scale-95 transition-all">
                 {buttonText}
                 <FaAngleRight />
               </button>

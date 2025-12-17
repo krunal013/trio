@@ -1,37 +1,38 @@
 import React from "react";
-import { Rubik } from "next/font/google";
 import Link from "next/link";
+import { CgEditBlackPoint } from "react-icons/cg";
+import { IoIosArrowForward } from "react-icons/io";
 
-const rubik = Rubik({
-    subsets: ["latin"],
-    weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
+
 
 export default function HeroContent() {
-    return <section className="w-full text-center pt-28 pb-20">
+    return <section className="w-full text-center pt-20 md:pt-28 pb-20">
         {/* Main Heading */}
-        <span className={`${rubik.className} text-zinc-800 text-4xl md:text-7xl font-semibold leading-tight tracking-normal`}>
-            The #1 Tech Partner<br />
-            for Digital Transformation
+        <span className={` text-zinc-800 text-4xl md:text-7xl  leading-tight tracking-normal`}>
+           Powering the Next Generation <br/>
+of Digital Experience
+
         </span>
 
         {/* Sub Text Row */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm tracking-wider text-black/70">
-            <span>#1 IN WEB & APP DEVELOPMENT</span>
-            <span>#1 IN DIGITAL BRAND EXPERIENCES</span>
-            <span>#1 IN ENTERPRISE TECH SOLUTIONS</span>
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 mt-8 text-sm tracking-wider text-black/70">
+            <span>Next-Gen Web & Mobile Platforms</span>
+            <CgEditBlackPoint className="hidden lg:block" />
+            <span>Immersive Digital Interfaces</span>
+            <CgEditBlackPoint className="hidden lg:block" />
+            <span>Enterprise-Grade Cloud Solutions</span>
         </div>
 
         {/* Buttons */}
-        <div className=" flex flex-col md:flex-row items-center justify-center gap-4 mt-12">
+        <div className=" flex flex-row  md:flex-row items-center justify-center gap-4 mt-12">
             <Link href="/contact">
-                <button className="px-6 py-3 mb-5 md:mb-0  bg-gradient-to-br from-[#09d6c8] via-[#7190fa] to-[#bf64f9] text-white rounded-full text-sm font-bold tracking-wide cursor-pointer transition-all duration-300 active:scale-105">
-                    Start free consultation
+                <button className=" px-6 py-3  md:mb-0 cursor-pointer shadow-lg  bg-gradient-to-br from-[#09d6c8] via-[#7190fa] to-[#bf64f9] text-white rounded-full text-sm font-bold tracking-wide  transition-all duration-300 active:scale-105">
+                    Build With Us
                 </button>
             </Link>
             <Link href="/casestudies">
-                <button className="px-6 py-3 border font-semibold border-black rounded-full text-sm tracking-wide text-black cursor-pointer transition-all duration-300 active:scale-105">
-                    View our work
+                <button className="px-6 py-3 flex items-center justify-between gap-1 border font-semibold shadow-md border-black rounded-full text-sm tracking-wide text-black cursor-pointer transition-all duration-300 active:scale-105">
+                    View our work <IoIosArrowForward className="inline-block text-md"/>
                 </button>
             </Link>
         </div>
