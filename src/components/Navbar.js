@@ -89,7 +89,7 @@ const Navbar = () => {
           }`}
       >
         <div className="w-full max-w-7xl px-6
-        lg:px-8 mx-auto">
+        lg:px-7 mx-auto">
 
           <div className="">
             <div className="w-full flex flex-col lg:flex-row justify-between">
@@ -102,7 +102,7 @@ const Navbar = () => {
     width={240}
     height={80}
     priority
-    className="h-10 md:h-12 w-auto transition-all duration-300"
+    className="object-cover w-40 md:w-48 transition-all duration-300"
   />
 </Link>
 
