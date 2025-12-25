@@ -2,16 +2,10 @@ import "./globals.css";
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MainWrapper from "./MainWrapper";
-import Androidchrome192x192 from "./favicons/android-chrome-192x192.png";
-import Androidchrome512x512 from "./favicons/android-chrome-512x512.png";
-import AppleTouchIcon from "./favicons/apple-touch-icon.png";
-import Favicon16x16 from "./favicons/favicon-16x16.png";
-import Favicon32x32 from "./favicons/favicon-32x32.png";
 
 export const metadata = {
   metadataBase: new URL("https://www.triospheretech.com"),
 
-  // 🔥 Title Optimization
   title: {
     default: "Triosphere Tech - Leading Tech Company in Ahmedabad",
     template: "%s | Triosphere Tech",
@@ -33,14 +27,6 @@ export const metadata = {
 
   authors: [{ name: "Triosphere Tech" }],
 
-  other: {
-    "og:see_also": [
-      "https://www.instagram.com/triospheretech/",
-      "https://www.linkedin.com/company/triospheretech/",
-    ],
-  },
-
-  // 🔥 OpenGraph
   openGraph: {
     title: "Triosphere Tech - Leading Tech Company in Ahmedabad",
     description:
@@ -51,7 +37,6 @@ export const metadata = {
     type: "website",
   },
 
-  // 🔥 Robots
   robots: {
     index: true,
     follow: true,
@@ -61,26 +46,24 @@ export const metadata = {
     },
   },
 
-  // 🔥 Correct Favicon + Touch Icons
+  // ✅ CORRECT favicon setup (PUBLIC FILES ONLY)
   icons: {
     icon: [
-      { url: Favicon16x16.src, sizes: "16x16", type: "image/png" },
-      { url: Favicon32x32.src, sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" }, // ⭐ MOST IMPORTANT FOR GOOGLE
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [
-      { url: AppleTouchIcon.src, sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: Favicon32x32.src,
+    apple: "/apple-touch-icon.png",
     other: [
       {
         rel: "icon",
-        url: Androidchrome192x192.src,
+        url: "/android-chrome-192x192.png",
         sizes: "192x192",
         type: "image/png",
       },
       {
         rel: "icon",
-        url: Androidchrome512x512.src,
+        url: "/android-chrome-512x512.png",
         sizes: "512x512",
         type: "image/png",
       },
@@ -92,16 +75,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col antialiased">
-
         <Header />
 
-        <MainWrapper>
-          {children}
-        </MainWrapper>
+        <MainWrapper>{children}</MainWrapper>
 
         <Footer />
 
-        {/* 🔥 Local Business Schema (Corrected + Validated) */}
+        {/* ✅ Local Business Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -110,17 +90,12 @@ export default function RootLayout({ children }) {
               "@type": "LocalBusiness",
               name: "Triosphere Tech",
               url: "https://www.triospheretech.com",
-              logo:
-                "https://www.triospheretech.com/images/Logo/Logo_new.png",
-
+              logo: "https://www.triospheretech.com/images/Logo/Logo_new.png",
+              image: "https://www.triospheretech.com/images/Logo/Logo_new.png",
               sameAs: [
                 "https://www.instagram.com/triospheretech/",
                 "https://www.linkedin.com/company/triospheretech/",
               ],
-
-              image:
-                "https://www.triospheretech.com/images/Logo/Logo_new.png",
-
               address: {
                 "@type": "PostalAddress",
                 streetAddress:
@@ -130,15 +105,12 @@ export default function RootLayout({ children }) {
                 postalCode: "380009",
                 addressCountry: "IN",
               },
-
               telephone: "+918320633166",
-
               geo: {
                 "@type": "GeoCoordinates",
                 latitude: 23.0225,
                 longitude: 72.5714,
               },
-
               openingHours: "Mo-Sa 09:00-18:00",
               priceRange: "₹₹",
             }),

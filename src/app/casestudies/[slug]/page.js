@@ -199,145 +199,187 @@ export default async function CaseStudyPage({ params }) {
       {/* -------------------------------------------- */}
       {/* SECTIONS */}
       {/* -------------------------------------------- */}
-      <div className=" mx-auto py-8 lg:py-16 space-y-24">
+      <div className=" mx-auto py-4 lg:py-8  lg:space-y-24">
 
-        {caseStudy.sections?.map((sec, i) => {
-          const isEven = i % 2 === 0;
+       {caseStudy.sections?.map((sec, i) => {
 
-          // 1️⃣ Full Width Description
-          if (sec._type === "fullWidthDescription") {
-            return (
-              <div key={i} className="text-left  mx-auto">
-                {sec.heading && (
-                  <h3 className="text-3xl md:text-4xl font-semibold text-zinc-900 mb-6">
-                    {sec.heading}
-                  </h3>
-                )}
-                <PortableText className="text-xl font-semibold" value={sec.description} components={ptComponents} />
-              </div>
-            );
-          }
+  // 1️⃣ Heading + Description
+  if (sec._type === "headingDescription") {
+    return (
+      <section key={i} className="max-w-4xl">
+        {sec.heading && (
+          <h3 className="text-3xl md:text-4xl font-semibold text-zinc-900 mb-4">
+            {sec.heading}
+          </h3>
+        )}
+        <PortableText value={sec.description} components={ptComponents} />
+      </section>
+    );
+  }
 
-          // 2️⃣ Description + Table
-          if (sec._type === "descriptionTable") {
-            return (
-              <div
-                key={i}
-                className={`flex flex-col md:flex-row gap-12 ${
-                  isEven ? "" : "md:flex-row-reverse"
-                }`}
-              >
-                <div className="md:w-1/2">
-                  {sec.heading && (
-                    <h3 className="text-3xl font-semibold mb-6">{sec.heading}</h3>
-                  )}
-                  <PortableText value={sec.description} components={ptComponents} />
-                </div>
+  // 2️⃣ Points with Descriptions (Cards)
+  if (sec._type === "pointsCards") {
+    return (
+      <section key={i} className="space-y-8">
+        {sec.heading && (
+          <h3 className="text-3xl font-semibold">{sec.heading}</h3>
+        )}
 
-                <div className="md:w-1/2">
-                  <RenderTable table={sec.table} />
-                </div>
-              </div>
-            );
-          }
-
-          // 3️⃣ Image + Table
-          if (sec._type === "tableImageSection") {
-            return (
-              <div
-                key={i}
-                className={`flex flex-col md:flex-row gap-12 ${
-                  isEven ? "" : "md:flex-row-reverse"
-                }`}
-              >
-                <div className="md:w-1/2">
-                  <RenderTable table={sec.table} />
-                </div>
-
-                <div className="md:w-1/2">
-                  {sec.image?.asset?.url && (
-                    <Image
-                      src={sec.image.asset.url}
-                      width={700}
-                      height={500}
-                      alt={sec.heading}
-                      className="rounded-xl object-cover"
-                    />
-                  )}
-                </div>
-              </div>
-            );
-          }
-
-          // 4️⃣ Full width table
-          if (sec._type === "fullTableSection") {
-            return (
-              <div key={i}>
-                {sec.heading && (
-                  <h3 className="text-3xl font-semibold mb-6 text-center">
-                    {sec.heading}
-                  </h3>
-                )}
-                <RenderTable table={sec.table} />
-              </div>
-            );
-          }
-
-          // 5️⃣ Existing Image + Description (Beautiful Layout)
-          if (sec.image?.asset?.url && sec.description) {
-            return (
-              <div
-                key={i}
-                className={`flex flex-col md:flex-row gap-12 ${
-                  isEven ? "" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Image */}
-                <div className="md:w-1/2">
-                  <Image
-                    src={sec.image.asset.url}
-                    width={800}
-                    height={600}
-                    alt={sec.heading}
-                    className="rounded-xl object-cover shadow-sm"
-                  />  
-                </div>
-
-                {/* Description */}
-                <div className="md:w-1/2">
-                  {sec.heading && (
-                    <h3 className="text-3xl font-semibold mb-6">{sec.heading}</h3>
-                  )}
-                  <PortableText value={sec.description} components={ptComponents} />
-                </div>
-              </div>
-            );
-          }
-
-          // 6️⃣ Only text or only image
-          return (
-            <div key={i} className="text-center max-w-3xl mx-auto">
-              {sec.image?.asset?.url && (
-                <Image
-                  src={sec.image.asset.url}
-                  width={900}
-                  height={650}
-                  alt="Section"
-                  className="rounded-xl mx-auto mb-6 object-cover"
-                />
-              )}
-              {sec.heading && (
-                <h3 className="text-3xl font-semibold mb-4">{sec.heading}</h3>
-              )}
-              {sec.description && (
-                <PortableText
-                  value={sec.description}
-                  components={ptComponents}
-                />
-              )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sec.points?.map((item, idx) => (
+            <div
+              key={idx}
+              className="border rounded-xl p-6 bg-white shadow-sm"
+            >
+              <h4 className="text-lg font-semibold mb-2">
+                {item.title}
+              </h4>
+              <PortableText
+                value={item.description}
+                components={ptComponents}
+              />
             </div>
-          );
-        })}
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  // 3️⃣ Full Width Image + Description
+  if (sec._type === "fullImageWithCaption") {
+    return (
+      <section key={i} className="space-y-6">
+        {sec.image?.asset?.url && (
+          <Image
+            src={sec.image.asset.url}
+            width={1400}
+            height={800}
+            alt="Case Study Visual"
+            className="rounded-2xl w-full object-cover"
+          />
+        )}
+        <div className="max-w-4xl">
+          <PortableText value={sec.caption} components={ptComponents} />
+        </div>
+      </section>
+    );
+  }
+
+  // 4️⃣ Text Left – Image Right
+  if (sec._type === "textLeftImageRight") {
+    return (
+      <section key={i} className="flex flex-col md:flex-row gap-12">
+        <div className="md:w-1/2">
+          <h3 className="text-3xl font-semibold mb-4">{sec.heading}</h3>
+          <PortableText value={sec.description} components={ptComponents} />
+        </div>
+        <div className="md:w-1/2">
+          <Image
+            src={sec.image.asset.url}
+            width={800}
+            height={600}
+            alt={sec.heading}
+            className="rounded-xl object-cover"
+          />
+        </div>
+      </section>
+    );
+  }
+
+  // 5️⃣ Text Right – Image Left
+  if (sec._type === "textRightImageLeft") {
+    return (
+      <section key={i} className="flex flex-col md:flex-row gap-12">
+        <div className="md:w-1/2">
+          <Image
+            src={sec.image.asset.url}
+            width={800}
+            height={600}
+            alt={sec.heading}
+            className="rounded-xl object-cover"
+          />
+        </div>
+        <div className="md:w-1/2">
+          <h3 className="text-3xl font-semibold mb-4">{sec.heading}</h3>
+          <PortableText value={sec.description} components={ptComponents} />
+        </div>
+      </section>
+    );
+  }
+
+  // 6️⃣ Text Left – Table Right
+  if (sec._type === "textLeftTableRight") {
+    return (
+      <section key={i} className="flex flex-col md:flex-row gap-12">
+        <div className="md:w-1/2">
+          <h3 className="text-3xl font-semibold mb-4">{sec.heading}</h3>
+          <PortableText value={sec.description} components={ptComponents} />
+        </div>
+        <div className="md:w-1/2">
+          <RenderTable table={sec.table} />
+        </div>
+      </section>
+    );
+  }
+
+  // 7️⃣ Text Right – Table Left
+  if (sec._type === "textRightTableLeft") {
+    return (
+      <section key={i} className="flex flex-col md:flex-row gap-12">
+        <div className="md:w-1/2">
+          <RenderTable table={sec.table} />
+        </div>
+        <div className="md:w-1/2">
+          <h3 className="text-3xl font-semibold mb-4">{sec.heading}</h3>
+          <PortableText value={sec.description} components={ptComponents} />
+        </div>
+      </section>
+    );
+  }
+
+  // 8️⃣ Table Left – Image Right
+  if (sec._type === "tableLeftImageRight") {
+    return (
+      <section key={i} className="flex flex-col md:flex-row gap-12">
+        <div className="md:w-1/2">
+          <RenderTable table={sec.table} />
+        </div>
+        <div className="md:w-1/2">
+          <Image
+            src={sec.image.asset.url}
+            width={800}
+            height={600}
+            alt="Table Illustration"
+            className="rounded-xl object-cover"
+          />
+        </div>
+      </section>
+    );
+  }
+
+  // 9️⃣ Table Right – Image Left
+  if (sec._type === "tableRightImageLeft") {
+    return (
+      <section key={i} className="flex flex-col md:flex-row gap-12">
+        <div className="md:w-1/2">
+          <Image
+            src={sec.image.asset.url}
+            width={800}
+            height={600}
+            alt="Table Illustration"
+            className="rounded-xl object-cover"
+          />
+        </div>
+        <div className="md:w-1/2">
+          <RenderTable table={sec.table} />
+        </div>
+      </section>
+    );
+  }
+
+  return null;
+})}
+
       </div>
 
       {/* -------------------------------------------- */}
