@@ -26,13 +26,17 @@ export default {
       validation: (Rule) => Rule.required()
     },
 
-    {
-      name: 'languages',
-      title: 'Languages Used',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: { layout: 'tags' }
-    },
+{
+  name: 'technologies',
+  title: 'Technologies Used',
+  type: 'array',
+  of: [{ type: 'string' }],
+  options: {
+    layout: 'tags'
+  },
+  validation: (Rule) =>
+    Rule.unique().min(1).error('Add at least one technology')
+},
 
     {
       name: 'mainImage',
@@ -51,173 +55,194 @@ export default {
     // -------------------------------------------------------------
     // ⭐ SECTIONS
     // -------------------------------------------------------------
-  {
+{
   name: 'sections',
   title: 'Sections',
   type: 'array',
   of: [
 
-    // 1️⃣ Only Heading + Description
+    // 1️⃣ Heading + Description
     {
       type: 'object',
       name: 'headingDescription',
       title: 'Heading + Description',
       fields: [
-        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'heading', type: 'string' },
         {
           name: 'description',
-          title: 'Description',
           type: 'array',
-          of: [{ type: 'block' }]
+          of: [{
+            type: 'block',
+            marks: {
+              decorators: [
+                { title: 'Strong', value: 'strong' },
+                { title: 'Emphasis', value: 'em' }
+              ],
+             annotations: [
+  {
+    name: 'link',
+    type: 'object',
+    title: 'Link',
+    fields: [
+      {
+        name: 'href',
+        type: 'url',
+        title: 'URL'
+      }
+    ]
+  }
+]
+
+            }
+          }]
         }
-      ],
-      preview: { select: { title: 'heading' } }
+      ]
     },
 
-    // 2️⃣ Points with Descriptions (Cards)
+    // 2️⃣ Points Cards
     {
       type: 'object',
       name: 'pointsCards',
-      title: 'Points with Descriptions (Cards)',
+      title: 'Points Cards',
       fields: [
-        { name: 'heading', title: 'Section Heading', type: 'string' },
+        { name: 'heading', type: 'string' },
         {
           name: 'points',
-          title: 'Cards',
           type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                { name: 'title', title: 'Title', type: 'string' },
-                {
-                  name: 'description',
-                  title: 'Description',
-                  type: 'array',
-                  of: [{ type: 'block' }]
-                }
-              ]
+          of: [{
+            type: 'object',
+            fields: [
+              { name: 'title', type: 'string' },
+              {
+                name: 'description',
+                type: 'array',
+                of: [{
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' }
+                    ],
+                    annotations: []
+                  }
+                }]
+              }
+            ],
+            preview: {
+              select: { title: 'title' }
             }
-          ]
+          }]
         }
-      ],
-      preview: { select: { title: 'heading' } }
+      ]
     },
 
-    // 3️⃣ Full Width Image + Description at Bottom
+    // 3️⃣ Image + Heading + Description
     {
       type: 'object',
       name: 'fullImageWithCaption',
-      title: 'Full Width Image + Description',
+      title: 'Image with Heading & Description',
       fields: [
-        { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+        { name: 'heading', type: 'string' },
+        { name: 'image', type: 'image', options: { hotspot: true } },
         {
-          name: 'caption',
-          title: 'Description',
+          name: 'description',
           type: 'array',
-          of: [{ type: 'block' }]
+          of: [{
+            type: 'block',
+            marks: {
+              decorators: [
+                { title: 'Strong', value: 'strong' },
+                { title: 'Emphasis', value: 'em' }
+              ],
+              annotations: []
+            }
+          }]
         }
-      ],
-      preview: { select: { media: 'image' } }
+      ]
     },
 
-    // 4️⃣ Text Left ~ Image Right
+    // 4️⃣ Text Left – Image Right
     {
       type: 'object',
       name: 'textLeftImageRight',
-      title: 'Text Left – Image Right',
       fields: [
-        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'heading', type: 'string' },
         {
           name: 'description',
-          title: 'Description',
           type: 'array',
-          of: [{ type: 'block' }]
+          of: [{ type: 'block', marks: { annotations: [] } }]
         },
-        { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }
-      ],
-      preview: { select: { title: 'heading', media: 'image' } }
+        { name: 'image', type: 'image' }
+      ]
     },
 
-    // 5️⃣ Text Right ~ Image Left
+    // 5️⃣ Text Right – Image Left
     {
       type: 'object',
       name: 'textRightImageLeft',
-      title: 'Text Right – Image Left',
       fields: [
-        { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
-        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'image', type: 'image' },
+        { name: 'heading', type: 'string' },
         {
           name: 'description',
-          title: 'Description',
           type: 'array',
-          of: [{ type: 'block' }]
+          of: [{ type: 'block', marks: { annotations: [] } }]
         }
-      ],
-      preview: { select: { title: 'heading', media: 'image' } }
+      ]
     },
 
-    // 6️⃣ Text Left ~ Table Right
+    // 6️⃣ Text Left – Table Right
     {
       type: 'object',
       name: 'textLeftTableRight',
-      title: 'Text Left – Table Right',
       fields: [
-        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'heading', type: 'string' },
         {
           name: 'description',
-          title: 'Description',
           type: 'array',
-          of: [{ type: 'block' }]
+          of: [{ type: 'block', marks: { annotations: [] } }]
         },
-        { name: 'table', title: 'Table', type: 'styledTable' }
-      ],
-      preview: { select: { title: 'heading' } }
+        { name: 'table', type: 'styledTable' }
+      ]
     },
 
-    // 7️⃣ Text Right ~ Table Left
+    // 7️⃣ Text Right – Table Left
     {
       type: 'object',
       name: 'textRightTableLeft',
-      title: 'Text Right – Table Left',
       fields: [
-        { name: 'table', title: 'Table', type: 'styledTable' },
-        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'table', type: 'styledTable' },
+        { name: 'heading', type: 'string' },
         {
           name: 'description',
-          title: 'Description',
           type: 'array',
-          of: [{ type: 'block' }]
+          of: [{ type: 'block', marks: { annotations: [] } }]
         }
-      ],
-      preview: { select: { title: 'heading' } }
+      ]
     },
 
-    // 8️⃣ Table Left ~ Image Right
+    // 8️⃣ Table Left – Image Right
     {
       type: 'object',
       name: 'tableLeftImageRight',
-      title: 'Table Left – Image Right',
       fields: [
-        { name: 'table', title: 'Table', type: 'styledTable' },
-        { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }
-      ],
-      preview: { select: { media: 'image' } }
+        { name: 'table', type: 'styledTable' },
+        { name: 'image', type: 'image' }
+      ]
     },
 
-    // 9️⃣ Table Right ~ Image Left
+    // 9️⃣ Table Right – Image Left
     {
       type: 'object',
       name: 'tableRightImageLeft',
-      title: 'Table Right – Image Left',
       fields: [
-        { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
-        { name: 'table', title: 'Table', type: 'styledTable' }
-      ],
-      preview: { select: { media: 'image' } }
+        { name: 'image', type: 'image' },
+        { name: 'table', type: 'styledTable' }
+      ]
     }
   ]
 }
+
 
   ]
 };

@@ -20,7 +20,7 @@ const CaseStudyClient = ({ categories, caseStudies }) => {
       <div className="flex flex-wrap justify-center gap-3 mb-12 mt-5 lg:mt-10">
         <button
           onClick={() => setActiveCategory("all")}
-          className={`px-5 py-2 rounded-full text-sm font-medium shadow-md transition
+          className={`px-5 py-2 rounded-full text-sm font-medium cursor-pointer shadow-md transition-all active:scale-95 duration-300
             ${
               activeCategory === "all"
                 ? "bg-blue-500 text-white"
@@ -34,7 +34,7 @@ const CaseStudyClient = ({ categories, caseStudies }) => {
           <button
             key={cat.slug.current}
             onClick={() => setActiveCategory(cat.slug.current)}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition
+            className={`px-5 py-2 rounded-full text-sm font-medium cursor-pointer transition-all active:scale-95 duration-300
               ${
                 activeCategory === cat.slug.current
                   ? "bg-blue-500 text-white"
@@ -76,7 +76,7 @@ const CaseStudyClient = ({ categories, caseStudies }) => {
                 </h3>
 
                 <p className="text-sm text-zinc-600 mt-2 line-clamp-2">
-                  {item.languages?.join(", ") ||
+                  {item.technologies?.join(", ") ||
                     "Discover insights, strategies, and performance results in this case study."}
                 </p>
 

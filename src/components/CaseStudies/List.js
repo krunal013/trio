@@ -18,7 +18,7 @@ const List = async () => {
       slug,
       mainImage{asset->{url}},
       category->{title, slug},
-      languages,
+      technologies,
       publishedAt
     }`
   );
