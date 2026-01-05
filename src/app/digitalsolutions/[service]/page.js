@@ -27,6 +27,8 @@ import HealthInd from "../../../../public/images/DigitalSolution/Industies/healt
 import Fintechero from "../../../../public/images/DigitalSolution/Industies/fintechero.webp";
 import Educationhero from "../../../../public/images/DigitalSolution/Industies/educationhero.webp";
 import Logisticshero from "../../../../public/images/DigitalSolution/Industies/logisticshero.webp";
+import Foodbevagers from "../../../../public/images/DigitalSolution/Industies/Foodbevagers.webp";
+import Tekton from "../../../../public/images/DigitalSolution/Industies/tekton.webp";
 import Ondemandhero from "../../../../public/images/DigitalSolution/Industies/on-demandhero.webp";
 import IndBenifits from "@/components/DigitalSolutions/Industries/IndBenifits";
 
@@ -713,7 +715,7 @@ const ServicePage = async ({ params }) => {
             ind_hero_description1="Our real estate app development services help agencies, brokers, and property managers create seamless digital platforms. From property listing apps to virtual tour solutions, we build tools that enhance client engagement and streamline real estate operations."
             ind_hero_description2="Whether you’re developing a rental management system, CRM platform, or real estate marketplace, our experienced developers ensure user-friendly interfaces and robust functionality."
             ind_hero_description3="Partner with us to elevate real estate experiences through innovative digital solutions that connect buyers, sellers, and agents."
-            Imgsrc={Ondemandhero}
+            Imgsrc={Tekton}
           />
           <IndBenifits
             mainheading="Benefits of Having a Digital Solution in Real Estate Industry"
@@ -785,7 +787,7 @@ const ServicePage = async ({ params }) => {
             ind_hero_description1="Our food and beverage app development services empower restaurants, cafes, and food delivery services with seamless digital platforms. From online ordering systems to inventory management solutions, we build tools that enhance customer engagement and streamline operations."
             ind_hero_description2="Whether you’re developing a food delivery app, reservation system, or loyalty program, our skilled developers combine modern technology with user-centric design to create effective F&B solutions."
             ind_hero_description3="Partner with us to transform food and beverage experiences through innovative digital solutions that delight customers and optimize business processes."
-            Imgsrc={Ondemandhero}
+            Imgsrc={Foodbevagers}
           />
           <IndBenifits
             mainheading="Benefits of Having a Digital Solution in Food & Beverage Industry"

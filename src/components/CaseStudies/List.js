@@ -24,7 +24,7 @@ const List = async () => {
   );
 
   return (
-    <div className="text-center mx-auto mt-5 md:mt-0">
+    <div className="text-center mx-auto mt-5 lg:mt-0">
       <h1 className="text-3xl md:text-5xl font-semibold">
         Case Studies
       </h1>
